@@ -20,41 +20,55 @@ function Hero() {
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 2px, transparent 0)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 relative z-10 w-full">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[14rem] font-black text-[#ffd700] tracking-wider mb-2 sm:mb-4 -rotate-2 animate-slide-up uppercase px-2" style={{ 
-          textShadow: '3px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 4px 0 0 #000, 0 4px 0 #000, -4px 0 0 #000, 0 -4px 0 #000, 6px 6px 10px rgba(0,0,0,0.8)',
-          WebkitTextStroke: '3px black',
-          paintOrder: 'stroke fill',
-          fontFamily: 'Impact, "Arial Black", sans-serif',
-          letterSpacing: '0.05em',
-          filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.5))'
-        }}>
-          $PEPE
+        {/* Mobile optimized title */}
+        <h1 className="font-black text-[#ffd700] tracking-wider mb-2 sm:mb-4 animate-slide-up uppercase px-2">
+          <span className="block text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[16rem] -rotate-2" style={{ 
+            textShadow: '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 3px 0 0 #000, 0 3px 0 #000, -3px 0 0 #000, 0 -3px 0 #000, 4px 4px 8px rgba(0,0,0,0.8)',
+            WebkitTextStroke: '2px black',
+            paintOrder: 'stroke fill',
+            fontFamily: 'Impact, "Arial Black", sans-serif',
+            letterSpacing: '0.05em',
+            filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.5))'
+          }}>
+            $PEPE
+          </span>
         </h1>
-        <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] max-w-2xl mx-auto rotate-1 animate-slide-up px-4" style={{ animationDelay: "100ms" }}>
-          The most memeable memecoin in existence. It's time for Pepe to take reign.
-        </p>
         
-        <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full max-w-full animate-slide-up mx-auto" style={{ animationDelay: "200ms" }}>
-          <span className="font-black text-[10px] xs:text-xs sm:text-sm md:text-base break-all text-center sm:text-left px-2">{contractAddress}</span>
-          <Button 
-            onClick={copyToClipboard}
-            className="bg-[#71c84f] hover:bg-[#65b346] text-black border-2 border-black h-8 sm:h-9 px-3 sm:px-4 font-black text-xs whitespace-nowrap shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all flex-shrink-0"
-          >
-            COPY
-          </Button>
+        {/* Mobile optimized tagline with better background */}
+        <div className="px-4 sm:px-0">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white max-w-2xl mx-auto rotate-1 animate-slide-up inline-block" style={{ 
+            animationDelay: "100ms",
+            textShadow: '3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 0 0 #000, 0 2px 0 #000, -2px 0 0 #000, 0 -2px 0 #000'
+          }}>
+            The most memeable memecoin in existence. It's time for Pepe to take reign.
+          </p>
+        </div>
+        
+        {/* Contract address - improved mobile layout */}
+        <div className="mt-6 sm:mt-8 animate-slide-up mx-auto max-w-full" style={{ animationDelay: "200ms" }}>
+          <div className="p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+            <span className="font-black text-xs sm:text-sm md:text-base break-all text-center sm:text-left px-2 leading-relaxed">{contractAddress}</span>
+            <Button 
+              onClick={copyToClipboard}
+              className="bg-[#71c84f] hover:bg-[#65b346] text-black border-2 border-black h-9 sm:h-9 px-4 sm:px-4 font-black text-xs whitespace-nowrap shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all flex-shrink-0 w-full sm:w-auto"
+            >
+              COPY ADDRESS
+            </Button>
+          </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center pt-6 sm:pt-8 animate-slide-up px-4" style={{ animationDelay: "300ms" }}>
-          <Button size="lg" className="bg-[#ef3338] hover:bg-[#d1282d] text-white text-lg sm:text-xl md:text-2xl h-14 sm:h-16 md:h-20 px-8 sm:px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black w-full sm:w-auto">
+        {/* CTA Buttons - improved mobile spacing */}
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center pt-6 sm:pt-8 animate-slide-up px-2" style={{ animationDelay: "300ms" }}>
+          <Button size="lg" className="bg-[#ef3338] hover:bg-[#d1282d] text-white text-xl sm:text-xl md:text-2xl h-16 sm:h-16 md:h-20 px-10 sm:px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black w-full sm:w-auto">
             BUY NOW
           </Button>
-          <Button size="lg" className="bg-white hover:bg-gray-100 text-black text-lg sm:text-xl md:text-2xl h-14 sm:h-16 md:h-20 px-8 sm:px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black w-full sm:w-auto">
+          <Button size="lg" className="bg-white hover:bg-gray-100 text-black text-xl sm:text-xl md:text-2xl h-16 sm:h-16 md:h-20 px-10 sm:px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black w-full sm:w-auto">
             CHART
           </Button>
         </div>
       </div>
 
-      {/* Stats Bar - Moved to bottom */}
+      {/* Stats Bar - improved mobile layout */}
       <div className="w-full max-w-5xl mx-auto mt-8 sm:mt-12 relative z-10 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {[
@@ -62,10 +76,10 @@ function Hero() {
             { icon: TrendingUp, label: "Market Cap", value: "$420M" },
             { icon: Coins, label: "Liquidity", value: "$42M" }
           ].map((stat, idx) => (
-            <div key={idx} className="bg-white border-[3px] border-black rounded-xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
-              <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2" />
-              <p className="text-xs sm:text-sm font-black text-gray-600">{stat.label}</p>
-              <p className="text-xl sm:text-2xl font-black">{stat.value}</p>
+            <div key={idx} className="bg-white border-[3px] border-black rounded-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+              <stat.icon className="w-6 h-6 sm:w-6 sm:h-6 mx-auto mb-2" />
+              <p className="text-sm sm:text-sm font-black text-gray-600">{stat.label}</p>
+              <p className="text-2xl sm:text-2xl font-black">{stat.value}</p>
             </div>
           ))}
         </div>
