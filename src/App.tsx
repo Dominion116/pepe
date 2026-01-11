@@ -16,56 +16,56 @@ function Hero() {
   }
   
   return (
-    <section id="home" className="pt-32 pb-20 px-4 min-h-screen flex flex-col items-center justify-center text-center bg-[#71c84f] relative overflow-hidden">
+    <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 min-h-screen flex flex-col items-center justify-center text-center bg-[#71c84f] relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 2px, transparent 0)', backgroundSize: '40px 40px' }} />
 
-      <div className="max-w-4xl mx-auto space-y-8 relative z-10">
-        <h1 className="text-8xl md:text-[14rem] font-black text-[#ffd700] tracking-wider mb-4 -rotate-2 animate-slide-up uppercase" style={{ 
-          textShadow: '6px 6px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 6px 0 0 #000, 0 6px 0 #000, -6px 0 0 #000, 0 -6px 0 #000, 8px 8px 12px rgba(0,0,0,0.8)',
-          WebkitTextStroke: '5px black',
+      <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 relative z-10 w-full">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[14rem] font-black text-[#ffd700] tracking-wider mb-2 sm:mb-4 -rotate-2 animate-slide-up uppercase px-2" style={{ 
+          textShadow: '3px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 4px 0 0 #000, 0 4px 0 #000, -4px 0 0 #000, 0 -4px 0 #000, 6px 6px 10px rgba(0,0,0,0.8)',
+          WebkitTextStroke: '3px black',
           paintOrder: 'stroke fill',
           fontFamily: 'Impact, "Arial Black", sans-serif',
           letterSpacing: '0.05em',
-          filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
+          filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.5))'
         }}>
           $PEPE
         </h1>
-        <p className="text-xl md:text-3xl font-black text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] max-w-2xl mx-auto rotate-1 animate-slide-up" style={{ animationDelay: "100ms" }}>
+        <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] max-w-2xl mx-auto rotate-1 animate-slide-up px-4" style={{ animationDelay: "100ms" }}>
           The most memeable memecoin in existence. It's time for Pepe to take reign.
         </p>
         
-        <div className="mt-8 p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] inline-flex flex-col sm:flex-row items-center gap-3 max-w-full animate-slide-up" style={{ animationDelay: "200ms" }}>
-          <span className="font-black text-xs sm:text-sm md:text-base break-all text-center sm:text-left">{contractAddress}</span>
+        <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full max-w-full animate-slide-up mx-auto" style={{ animationDelay: "200ms" }}>
+          <span className="font-black text-[10px] xs:text-xs sm:text-sm md:text-base break-all text-center sm:text-left px-2">{contractAddress}</span>
           <Button 
             onClick={copyToClipboard}
-            className="bg-[#71c84f] hover:bg-[#65b346] text-black border-2 border-black h-8 px-4 font-black text-xs whitespace-nowrap shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+            className="bg-[#71c84f] hover:bg-[#65b346] text-black border-2 border-black h-8 sm:h-9 px-3 sm:px-4 font-black text-xs whitespace-nowrap shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all flex-shrink-0"
           >
             COPY
           </Button>
         </div>
 
-        <div className="flex flex-wrap gap-6 justify-center pt-8 animate-slide-up" style={{ animationDelay: "300ms" }}>
-          <Button size="lg" className="bg-[#ef3338] hover:bg-[#d1282d] text-white text-xl md:text-2xl h-16 md:h-20 px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center pt-6 sm:pt-8 animate-slide-up px-4" style={{ animationDelay: "300ms" }}>
+          <Button size="lg" className="bg-[#ef3338] hover:bg-[#d1282d] text-white text-lg sm:text-xl md:text-2xl h-14 sm:h-16 md:h-20 px-8 sm:px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black w-full sm:w-auto">
             BUY NOW
           </Button>
-          <Button size="lg" className="bg-white hover:bg-gray-100 text-black text-xl md:text-2xl h-16 md:h-20 px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black">
+          <Button size="lg" className="bg-white hover:bg-gray-100 text-black text-lg sm:text-xl md:text-2xl h-14 sm:h-16 md:h-20 px-8 sm:px-10 md:px-16 rounded-2xl border-[4px] border-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all font-black w-full sm:w-auto">
             CHART
           </Button>
         </div>
       </div>
 
       {/* Stats Bar - Moved to bottom */}
-      <div className="w-full max-w-5xl mx-auto mt-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="w-full max-w-5xl mx-auto mt-8 sm:mt-12 relative z-10 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {[
             { icon: Users, label: "Holders", value: "69,420+" },
             { icon: TrendingUp, label: "Market Cap", value: "$420M" },
             { icon: Coins, label: "Liquidity", value: "$42M" }
           ].map((stat, idx) => (
             <div key={idx} className="bg-white border-[3px] border-black rounded-xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
-              <stat.icon className="w-6 h-6 mx-auto mb-2" />
-              <p className="text-sm font-black text-gray-600">{stat.label}</p>
-              <p className="text-2xl font-black">{stat.value}</p>
+              <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2" />
+              <p className="text-xs sm:text-sm font-black text-gray-600">{stat.label}</p>
+              <p className="text-xl sm:text-2xl font-black">{stat.value}</p>
             </div>
           ))}
         </div>
@@ -153,9 +153,9 @@ function App() {
         <Hero />
         
         <Section id="about" title="ABOUT" bgColor="bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="p-8 border-[4px] border-black rounded-3xl shadow-[8px_8px_0_0_rgba(113,200,79,1)] bg-white rotate-2 hover:rotate-0 transition-transform duration-300">
-              <p className="text-xl md:text-2xl font-bold leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="p-6 sm:p-8 border-[4px] border-black rounded-3xl shadow-[8px_8px_0_0_rgba(113,200,79,1)] bg-white rotate-2 hover:rotate-0 transition-transform duration-300">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-relaxed">
                 Pepe is tired of watching everyone play hot potato with the endless derivative ShibaCumGMElonKishuTurboAssFlokiMoon Inu coins. The dogs have had their day. 
                 <br/><br/>
                 It's time for the most recognizable meme in the world to take his reign as king of the memes.
@@ -165,14 +165,14 @@ function App() {
                <img 
                  src="/pepe-mascot.png" 
                  alt="Pepe the Frog mascot giving thumbs up"
-                 className="w-full max-w-md h-auto rounded-3xl border-[4px] border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] bg-[#71c84f] p-8"
+                 className="w-full max-w-sm sm:max-w-md h-auto rounded-3xl border-[4px] border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] bg-[#71c84f] p-6 sm:p-8"
                />
             </div>
           </div>
         </Section>
 
         <Section id="how-to-buy" title="HOW TO BUY" bgColor="bg-[#71c84f]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { step: "1", icon: Wallet, title: "Create Wallet", desc: "Download Metamask or your wallet of choice from the app store or google play store for free. Desktop users, download the google chrome extension." },
               { step: "2", icon: Coins, title: "Get Some ETH", desc: "Have ETH in your wallet to switch to $PEPE. If you don't have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange." },
@@ -181,37 +181,37 @@ function App() {
             ].map((item, idx) => (
               <div 
                 key={item.step} 
-                className="p-6 bg-white border-[4px] border-black rounded-2xl shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-y-2 transition-all duration-300 group"
+                className="p-5 sm:p-6 bg-white border-[4px] border-black rounded-2xl shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-y-2 transition-all duration-300 group"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-[#ef3338] text-white border-[3px] border-black rounded-full flex items-center justify-center font-black text-2xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] group-hover:rotate-12 transition-transform">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ef3338] text-white border-[3px] border-black rounded-full flex items-center justify-center font-black text-xl sm:text-2xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] group-hover:rotate-12 transition-transform">
                     {item.step}
                   </div>
-                  <item.icon className="w-8 h-8 text-[#71c84f] group-hover:scale-110 transition-transform" />
+                  <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#71c84f] group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-2xl font-black mb-3">{item.title}</h3>
-                <p className="font-bold text-gray-700">{item.desc}</p>
+                <h3 className="text-xl sm:text-2xl font-black mb-2 sm:mb-3">{item.title}</h3>
+                <p className="font-bold text-gray-700 text-sm sm:text-base">{item.desc}</p>
               </div>
             ))}
           </div>
         </Section>
 
         <Section id="tokenomics" title="TOKENOMICS" bgColor="bg-white">
-           <div className="max-w-4xl mx-auto space-y-8">
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <div className="p-8 border-[4px] border-black rounded-3xl bg-[#71c84f] shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-                 <h4 className="text-2xl font-black mb-2">Total Supply</h4>
-                 <p className="text-3xl md:text-4xl font-black">420,690,000,000,000</p>
+           <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+               <div className="p-6 sm:p-8 border-[4px] border-black rounded-3xl bg-[#71c84f] shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all">
+                 <h4 className="text-xl sm:text-2xl font-black mb-2">Total Supply</h4>
+                 <p className="text-2xl sm:text-3xl md:text-4xl font-black break-all">420,690,000,000,000</p>
                </div>
-               <div className="p-8 border-[4px] border-black rounded-3xl bg-[#ef3338] text-white shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-                 <h4 className="text-2xl font-black mb-2">Tax</h4>
-                 <p className="text-3xl md:text-4xl font-black">0% / 0%</p>
-                 <p className="text-sm mt-2 font-bold">Buy & Sell</p>
+               <div className="p-6 sm:p-8 border-[4px] border-black rounded-3xl bg-[#ef3338] text-white shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all">
+                 <h4 className="text-xl sm:text-2xl font-black mb-2">Tax</h4>
+                 <p className="text-2xl sm:text-3xl md:text-4xl font-black">0% / 0%</p>
+                 <p className="text-xs sm:text-sm mt-2 font-bold">Buy & Sell</p>
                </div>
              </div>
-             <div className="p-8 border-[4px] border-black rounded-3xl bg-white shadow-[12px_12px_0_0_rgba(113,200,79,1)] hover:shadow-[16px_16px_0_0_rgba(113,200,79,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-               <p className="text-xl md:text-2xl font-bold text-center leading-relaxed">
+             <div className="p-6 sm:p-8 border-[4px] border-black rounded-3xl bg-white shadow-[12px_12px_0_0_rgba(113,200,79,1)] hover:shadow-[16px_16px_0_0_rgba(113,200,79,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all">
+               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center leading-relaxed">
                  93.1% of the tokens were sent to the liquidity pool, LP tokens were burnt, and contract is renounced. The remaining 6.9% of the supply is being held in a multi-sig wallet only to be used as tokens for future centralized exchange listings, bridges, and liquidity pools.
                </p>
              </div>
@@ -219,9 +219,9 @@ function App() {
         </Section>
 
         <Section id="join-us" title="JOIN THE COMMUNITY" bgColor="bg-black" titleColor="text-white">
-          <div className="text-center space-y-8">
-            <h3 className="text-4xl md:text-6xl font-black text-[#71c84f] mb-8">FOLLOW THE REVOLUTION</h3>
-            <div className="flex flex-wrap justify-center gap-8">
+          <div className="text-center space-y-6 sm:space-y-8">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#71c84f] mb-6 sm:mb-8">FOLLOW THE REVOLUTION</h3>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-8">
                <a 
                  href="https://twitter.com" 
                  target="_blank" 
@@ -229,8 +229,8 @@ function App() {
                  className="transform hover:scale-110 transition-all duration-300 group"
                  aria-label="Follow us on Twitter"
                >
-                 <div className="bg-white p-8 rounded-2xl border-[6px] border-[#71c84f] shadow-[0_0_30px_rgba(113,200,79,0.5)] group-hover:shadow-[0_0_50px_rgba(113,200,79,0.8)] transition-all">
-                    <span className="text-black font-black text-3xl md:text-4xl">Twitter</span>
+                 <div className="bg-white p-6 sm:p-8 rounded-2xl border-[6px] border-[#71c84f] shadow-[0_0_30px_rgba(113,200,79,0.5)] group-hover:shadow-[0_0_50px_rgba(113,200,79,0.8)] transition-all">
+                    <span className="text-black font-black text-2xl sm:text-3xl md:text-4xl">Twitter</span>
                  </div>
                </a>
                <a 
@@ -240,12 +240,12 @@ function App() {
                  className="transform hover:scale-110 transition-all duration-300 group"
                  aria-label="Join our Telegram"
                >
-                 <div className="bg-white p-8 rounded-2xl border-[6px] border-[#ef3338] shadow-[0_0_30px_rgba(239,51,56,0.5)] group-hover:shadow-[0_0_50px_rgba(239,51,56,0.8)] transition-all">
-                    <span className="text-black font-black text-3xl md:text-4xl">Telegram</span>
+                 <div className="bg-white p-6 sm:p-8 rounded-2xl border-[6px] border-[#ef3338] shadow-[0_0_30px_rgba(239,51,56,0.5)] group-hover:shadow-[0_0_50px_rgba(239,51,56,0.8)] transition-all">
+                    <span className="text-black font-black text-2xl sm:text-3xl md:text-4xl">Telegram</span>
                  </div>
                </a>
             </div>
-            <p className="text-gray-400 font-bold pt-12 max-w-3xl mx-auto text-sm md:text-base">
+            <p className="text-gray-400 font-bold pt-8 sm:pt-12 max-w-3xl mx-auto text-xs sm:text-sm md:text-base px-4">
               $PEPE coin has no association with Matt Furie or his creation Pepe the Frog. This token is simply paying homage to a meme we all love and recognize.
               <br/><br/>
               $PEPE is a memecoin with no intrinsic value or expectation of financial return. There is no formal team or roadmap. the coin is completely useless and for entertainment purposes only.
@@ -254,8 +254,8 @@ function App() {
         </Section>
       </main>
       
-      <footer className="py-8 bg-black text-white text-center border-t-[4px] border-[#71c84f]">
-        <p className="font-black">© {new Date().getFullYear()} BY $PEPE. ALL RIGHTS RESERVED.</p>
+      <footer className="py-6 sm:py-8 bg-black text-white text-center border-t-[4px] border-[#71c84f]">
+        <p className="font-black text-sm sm:text-base">© {new Date().getFullYear()} BY $PEPE. ALL RIGHTS RESERVED.</p>
       </footer>
       
       <BackToTop />
