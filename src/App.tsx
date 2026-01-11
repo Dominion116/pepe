@@ -18,23 +18,6 @@ function Hero() {
   return (
     <section id="home" className="pt-32 pb-20 px-4 min-h-screen flex flex-col items-center justify-center text-center bg-[#71c84f] relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 2px, transparent 0)', backgroundSize: '40px 40px' }} />
-      
-      {/* Stats Bar */}
-      <div className="w-full max-w-5xl mx-auto mb-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            { icon: Users, label: "Holders", value: "69,420+" },
-            { icon: TrendingUp, label: "Market Cap", value: "$420M" },
-            { icon: Coins, label: "Liquidity", value: "$42M" }
-          ].map((stat, idx) => (
-            <div key={idx} className="bg-white border-[3px] border-black rounded-xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
-              <stat.icon className="w-6 h-6 mx-auto mb-2" />
-              <p className="text-sm font-black text-gray-600">{stat.label}</p>
-              <p className="text-2xl font-black">{stat.value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="max-w-4xl mx-auto space-y-8 relative z-10">
         <h1 className="text-6xl md:text-9xl font-black text-black tracking-tighter drop-shadow-[4px_4px_0_rgba(255,255,255,1)] mb-4 -rotate-1 animate-slide-up">
@@ -69,9 +52,27 @@ function Hero() {
           <div className="w-2 h-4 bg-black rounded-full" />
         </div>
       </div>
+
+      {/* Stats Bar - Moved to bottom */}
+      <div className="w-full max-w-5xl mx-auto mt-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { icon: Users, label: "Holders", value: "69,420+" },
+            { icon: TrendingUp, label: "Market Cap", value: "$420M" },
+            { icon: Coins, label: "Liquidity", value: "$42M" }
+          ].map((stat, idx) => (
+            <div key={idx} className="bg-white border-[3px] border-black rounded-xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+              <stat.icon className="w-6 h-6 mx-auto mb-2" />
+              <p className="text-sm font-black text-gray-600">{stat.label}</p>
+              <p className="text-2xl font-black">{stat.value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
+
 
 function Section({ id, title, children, bgColor = "bg-white" }: { id: string, title: string, children: React.ReactNode, bgColor?: string }) {
   const [isVisible, setIsVisible] = useState(false)
