@@ -20,8 +20,15 @@ function Hero() {
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 2px, transparent 0)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-4xl mx-auto space-y-8 relative z-10">
-        <h1 className="text-6xl md:text-9xl font-black text-black tracking-tighter drop-shadow-[4px_4px_0_rgba(255,255,255,1)] mb-4 -rotate-1 animate-slide-up">
-          $PEPE 0xFEFE
+        <h1 className="text-8xl md:text-[14rem] font-black text-[#ffd700] tracking-wider mb-4 -rotate-2 animate-slide-up uppercase" style={{ 
+          textShadow: '6px 6px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 6px 0 0 #000, 0 6px 0 #000, -6px 0 0 #000, 0 -6px 0 #000, 8px 8px 12px rgba(0,0,0,0.8)',
+          WebkitTextStroke: '5px black',
+          paintOrder: 'stroke fill',
+          fontFamily: 'Impact, "Arial Black", sans-serif',
+          letterSpacing: '0.05em',
+          filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
+        }}>
+          $PEPE
         </h1>
         <p className="text-xl md:text-3xl font-black text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] max-w-2xl mx-auto rotate-1 animate-slide-up" style={{ animationDelay: "100ms" }}>
           The most memeable memecoin in existence. It's time for Pepe to take reign.
@@ -46,12 +53,6 @@ function Hero() {
           </Button>
         </div>
       </div>
-      
-      <div className="mt-16 animate-bounce">
-        <div className="w-10 h-16 border-4 border-black rounded-full flex justify-center pt-2">
-          <div className="w-2 h-4 bg-black rounded-full" />
-        </div>
-      </div>
 
       {/* Stats Bar - Moved to bottom */}
       <div className="w-full max-w-5xl mx-auto mt-12 relative z-10">
@@ -74,7 +75,7 @@ function Hero() {
 }
 
 
-function Section({ id, title, children, bgColor = "bg-white" }: { id: string, title: string, children: React.ReactNode, bgColor?: string }) {
+function Section({ id, title, children, bgColor = "bg-white", titleColor = "text-black" }: { id: string, title: string, children: React.ReactNode, bgColor?: string, titleColor?: string }) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -98,7 +99,7 @@ function Section({ id, title, children, bgColor = "bg-white" }: { id: string, ti
   return (
     <section id={id} className={`py-24 px-4 border-t-[4px] border-black ${bgColor}`}>
       <div className="max-w-6xl mx-auto">
-        <h2 className={`text-5xl md:text-7xl font-black text-black mb-16 text-center underline decoration-[#71c84f] decoration-8 underline-offset-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <h2 className={`text-5xl md:text-7xl font-black ${titleColor} mb-16 text-center underline decoration-[#71c84f] decoration-8 underline-offset-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {title}
         </h2>
         <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -217,7 +218,7 @@ function App() {
            </div>
         </Section>
 
-        <Section id="join-us" title="JOIN THE COMMUNITY" bgColor="bg-black">
+        <Section id="join-us" title="JOIN THE COMMUNITY" bgColor="bg-black" titleColor="text-white">
           <div className="text-center space-y-8">
             <h3 className="text-4xl md:text-6xl font-black text-[#71c84f] mb-8">FOLLOW THE REVOLUTION</h3>
             <div className="flex flex-wrap justify-center gap-8">
@@ -229,7 +230,7 @@ function App() {
                  aria-label="Follow us on Twitter"
                >
                  <div className="bg-white p-8 rounded-2xl border-[6px] border-[#71c84f] shadow-[0_0_30px_rgba(113,200,79,0.5)] group-hover:shadow-[0_0_50px_rgba(113,200,79,0.8)] transition-all">
-                    <span className="text-black font-black text-3xl md:text-4xl">🐦 Twitter</span>
+                    <span className="text-black font-black text-3xl md:text-4xl">Twitter</span>
                  </div>
                </a>
                <a 
@@ -240,7 +241,7 @@ function App() {
                  aria-label="Join our Telegram"
                >
                  <div className="bg-white p-8 rounded-2xl border-[6px] border-[#ef3338] shadow-[0_0_30px_rgba(239,51,56,0.5)] group-hover:shadow-[0_0_50px_rgba(239,51,56,0.8)] transition-all">
-                    <span className="text-black font-black text-3xl md:text-4xl">✈️ Telegram</span>
+                    <span className="text-black font-black text-3xl md:text-4xl">Telegram</span>
                  </div>
                </a>
             </div>
