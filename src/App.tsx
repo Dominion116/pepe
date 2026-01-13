@@ -46,7 +46,7 @@ function Hero() {
         
         {/* Contract address - improved mobile layout */}
         <div className="mt-6 sm:mt-8 animate-slide-up mx-auto max-w-full" style={{ animationDelay: "200ms" }}>
-          <div className="p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+          <div className="p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col sm:flex-row items-center sm:justify-between gap-2 sm:gap-3">
             <span className="font-black text-xs sm:text-sm md:text-base break-all text-center sm:text-left px-2 leading-relaxed">{contractAddress}</span>
             <Button 
               onClick={copyToClipboard}
