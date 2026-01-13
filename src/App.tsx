@@ -46,11 +46,14 @@ function Hero() {
         
         {/* Contract address - improved mobile layout */}
         <div className="mt-6 sm:mt-8 animate-slide-up mx-auto max-w-full" style={{ animationDelay: "200ms" }}>
-          <div className="p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col sm:flex-row items-center sm:justify-between gap-2 sm:gap-3">
-            <span className="font-black text-xs sm:text-sm md:text-base break-all text-center sm:text-left px-2 leading-relaxed">{contractAddress}</span>
+          <div className="p-3 sm:p-4 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-row items-center justify-between gap-2 sm:gap-3">
+            <span className="font-black text-xs sm:text-sm md:text-base text-left px-2 leading-relaxed">
+              <span className="sm:hidden">{contractAddress.slice(0, 6)}...{contractAddress.slice(-4)}</span>
+              <span className="hidden sm:inline break-all">{contractAddress}</span>
+            </span>
             <Button 
               onClick={copyToClipboard}
-              className="bg-[#71c84f] hover:bg-[#65b346] text-black border-2 border-black h-9 sm:h-9 px-4 sm:px-4 font-black text-xs whitespace-nowrap shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all flex-shrink-0 w-full sm:w-auto"
+              className="bg-[#71c84f] hover:bg-[#65b346] text-black border-2 border-black h-9 sm:h-9 px-3 sm:px-4 font-black text-[10px] sm:text-xs whitespace-nowrap shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all flex-shrink-0 w-auto"
             >
               COPY ADDRESS
             </Button>
